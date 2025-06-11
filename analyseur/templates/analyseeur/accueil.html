@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>MalAnalyse - Accueil</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #121212;
+      color: #e0e0e0;
+    }
+
+    header {
+      background-color: #1f1f1f;
+      padding: 20px 40px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.6);
+    }
+
+    header h1 {
+      color: #00ffc8;
+      font-size: 28px;
+      letter-spacing: 1px;
+    }
+
+    main {
+      display: flex;
+      flex-direction: row;
+      padding: 40px;
+      gap: 40px;
+    }
+
+    .left-panel {
+      flex: 1;
+      background-color: #1e1e1e;
+      border: 1px solid #2c2c2c;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0, 255, 200, 0.1);
+    }
+
+    .left-panel h2 {
+      color: #00ffc8;
+      margin-bottom: 20px;
+    }
+
+    .left-panel p {
+      font-size: 15px;
+      line-height: 1.6;
+    }
+
+    .right-panel {
+      flex: 2;
+      background-color: #202020;
+      border-radius: 12px;
+      padding: 30px;
+      border: 1px solid #333;
+      box-shadow: inset 0 0 10px rgba(0, 255, 200, 0.1);
+    }
+
+    .legend-item {
+      margin-bottom: 15px;
+    }
+
+    .legend-item span {
+      display: inline-block;
+      padding: 5px 10px;
+      border-radius: 5px;
+      background-color: #ff4c4c;
+      color: white;
+      font-size: 14px;
+      margin-right: 10px;
+    }
+
+    .legend-item small {
+      color: #ccc;
+    }
+
+    .analyze-btn {
+      display: inline-block;
+      margin-top: 30px;
+      padding: 18px 40px;
+      font-size: 18px;
+      background-color: #00ffc8;
+      color: #000;
+      text-decoration: none;
+      border-radius: 10px;
+      transition: background-color 0.3s ease;
+    }
+
+    .analyze-btn:hover {
+      background-color: #00cfa5;
+    }
+
+    .center-btn {
+      display: flex;
+      justify-content: center;
+      margin-top: 30px;
+    }
+
+
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>MalAnalyse - Plateforme d’analyse de malwares</h1>
+</header>
+
+<main>
+  <div class="left-panel">
+    <h2>À propos</h2>
+    <p>
+      Cette plateforme permet d'automatiser l’analyse des fichiers suspects à l’aide d’outils avancés tels que CAPEv2
+      et VirusTotal. Elle facilite l’identification, la classification et la génération de rapports de malwares.
+    </p>
+   
+  </div>
+
+  <div class="right-panel">
+    <h2>Légende des types de détections</h2>
+    <div class="legend-item">
+      <span>Malicious</span> <small>Fichier présentant un comportement malveillant confirmé.</small>
+    </div>
+    <div class="legend-item">
+      <span style="background-color:#ffc107;">Suspicious</span> <small>Comportement suspect détecté, nécessite une vérification manuelle.</small>
+    </div>
+    <div class="legend-item">
+      <span style="background-color:#17a2b8;">Info</span> <small>Informations générales extraites du fichier.</small>
+    </div>
+  </div>
+</main>
+
+<div class="center-btn">
+    <a href="{% url 'upload' %}" class="analyze-btn">Lancer une analyse</a>
+</div>
+
+</body>
+</html>
